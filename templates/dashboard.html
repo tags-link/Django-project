@@ -1,0 +1,35 @@
+{% extends 'index.html'%}
+<!-- static -->
+{% load static %}
+
+<!-- logo section -->
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %}
+<!-- styles -->
+{% block style %} {% endblock %}
+<!-- header -->
+{% block header %}{% endblock %}
+<!-- content -->
+{% block content %}
+<div>
+  <div class="pd">
+    <h2>Personal Details</h2>
+    <a href="">Edit</a>
+  </div>
+  <div class="pd-content">
+    <div class="pdetails">
+      <p></p>
+      <p></p>
+    </div>
+    <div class="profile-card"></div>
+  </div>
+  <div class="grid">
+    <div class="grid-item"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+{% endblock %}

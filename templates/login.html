@@ -1,0 +1,66 @@
+{% extends 'index.html'%} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style.css'  %}" />
+    <title>login</title>
+  </head>
+  <body>
+    {% block content %}
+
+    <div class="tit"><h1>Login to your NASIMS Account</h1></div>
+    <br />
+    <div class="form">
+      <div class="instruct">
+        <p>For biometrics enrolment, kindly follow the instructions below</p>
+        <ol>
+          <li>Login to your dashboard and click the "verification" tab</li>
+          <li>
+            Click the “capture your fingerprint” button to download and install
+            the enrolment application
+          </li>
+          <li>
+            After installation, provide the required credentials and click
+            "Proceed".
+          </li>
+          <li>
+            Make sure the fingerprint biometric device is connected, then click
+            on "Begin Enrolment" to launch the enrolment process.
+          </li>
+          <li>Click on the finger to begin the enrolment process</li>
+          <li>
+            Applicants are to enroll their Right thumb, Right index, Left thumb
+            and Left index fingers only for successful enrolment
+          </li>
+          <li>
+            After successful enrollment, click on “Submit” to save the biometric
+            enrollment
+          </li>
+        </ol>
+        <p>
+          After successful enrolment, please check the "verification" tab of
+          your self service portal to confirm if the capture was successful.
+        </p>
+      </div>
+      <div class="label">
+        {{form.errors}}
+        <form method="post">
+          {% csrf_token %}
+          <div>{{form.username}}</div>
+          <br />
+          <div>{{form.password}}</div>
+          <div class="links">
+            <input type="checkbox" name="" id="" />
+            <p>keep me logged in</p>
+            <a href="">Forgot Password</a>
+          </div>
+          <button type="submit" class="pro">Proceed</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  {% endblock %}
+</html>
